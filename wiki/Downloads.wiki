@@ -1,11 +1,4 @@
+#labels Featured
 = Downloads =
 
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+[http://snippetsource.googlecode.com/svn/trunk/releases/snippetsource_1.6_i386-win32-win32.zip snippetsource_1.6_i386-win32-win32.zip]
