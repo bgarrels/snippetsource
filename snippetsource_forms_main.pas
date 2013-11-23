@@ -208,7 +208,7 @@ uses
   SnippetSource_Forms_SQLLog, SnippetSource_Forms_SettingsDialog,
   SnippetSource.Modules.Data,
 
-  sharedlogger;
+  ts.Core.SharedLogger;
 
 {$region 'construction and destruction' /fold}
 procedure TfrmMain.AfterConstruction;
