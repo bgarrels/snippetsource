@@ -7,10 +7,15 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, richmemopackage, snippetsource_forms_main, lazrichedit, FrameViewer09,
+  SysUtils,
+  Forms,
+  richmemopackage,
+  lazrichedit,
+  FrameViewer09,
+
   { you can add units after this }
-  SysUtils, SetupFiltersDialog, ts.Components.VirtualDBTreeEx, filechannel,
-  fpccompat, ipcchannel, multilog, multiloglcl, sharedlogger, sharedloggerlcl,
+
+  ts.Components.VirtualDBTreeEx,
   ts_Core_ComponentInspector, ts_Editor_AboutDialog, ts_Editor_Manager,
   ts_Editor_Resources, ts_Editor_View, ts_Editor_ToolView_Base,
   ts.Editor.Interfaces, ts_Editor_ScriptEditor_ToolView,
@@ -30,7 +35,9 @@ uses
   ts.Editor.AlignLines.Settings, ts.Editor.Search.Engine.Settings,
   ts.Editor.CodeShaper.Settings, ts.Editor.CodeFilter.Settings,
   ts.Editor.HTMLView.Settings, ts.Editor.MiniMap.Settings,
-  ts.Editor.HexEditor.Settings, ts.Editor.Types;
+  ts.Editor.HexEditor.Settings, ts.Editor.Types,
+
+  snippetsource_forms_main;
 
 {$R *.res}
 
