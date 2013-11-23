@@ -116,6 +116,7 @@ type
     procedure actDeleteSelectedNodesExecute(Sender: TObject);
     procedure actExpandAllNodesExecute(Sender: TObject);
     procedure actCollapseAllNodesExecute(Sender: TObject);
+
     procedure dscMainDataChange(Sender: TObject; Field: TField);
     procedure FormShow(Sender: TObject);
     procedure FTreeViewCreateEditor(Sender: TBaseVirtualTree; Node: PVirtualNode; Column: TColumnIndex; out EditLink: IVTEditLink);
@@ -269,8 +270,6 @@ uses
   SysUtils, ShellApi,
 
   VTEditors;
-
-  //ts_Core_ComponentInspector;
 
 resourcestring
   SDeleteSelectedItems = 'Are you sure you want to delete te selected item(s)?';

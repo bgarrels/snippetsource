@@ -24,7 +24,7 @@ interface
 
 uses
   Classes, SysUtils, DB, BufDataset, FileUtil, Forms, Controls, Graphics,
-  ExtCtrls, ComCtrls, ActnList, StdCtrls, DBGrids, Menus, Buttons,
+  ExtCtrls, ComCtrls, ActnList, StdCtrls, Menus, Buttons,
 
   SynEdit,
 
@@ -67,7 +67,6 @@ type
     btnLineBreakStyle  : TSpeedButton;
     edtSearch          : TEdit;
     edtTitle           : TEdit;
-    grdMain            : TDBGrid;
     dscMain            : TDatasource;
     imgNode            : TImage;
     imlMain            : TImageList;
@@ -157,6 +156,7 @@ type
     procedure ExportNode;
 
   protected
+    procedure HideAction(const AActionName: string);
     procedure AssignEditorChanges;
     procedure UpdateStatusBar;
     procedure UpdateActions; override;
@@ -166,6 +166,7 @@ type
     ); overload;
     procedure AddButton(AAction: TBasicAction); overload;
     procedure BuildToolBar;
+    procedure InitActions;
 
   public
      procedure AfterConstruction; override;
@@ -245,6 +246,7 @@ begin
   EV.AddOnModifiedHandler(EModified);
 
   BuildToolBar;
+  InitActions;
   dscMain.DataSet := DataSet.DataSet;
 
   FTree := TfrmVirtualDBTree.Create(Self);
@@ -382,7 +384,6 @@ end;
 procedure TfrmMain.EModified(Sender: TObject);
 begin
   Logger.Send('EModified');
-
 end;
 
 procedure TfrmMain.ESave(Sender: TObject; var AStorageName: string);
@@ -598,6 +599,12 @@ begin
   if Snippet.NodeTypeID = 2 then
     Editor.Save(Snippet.NodeName);
 end;
+
+procedure TfrmMain.HideAction(const AActionName: string);
+begin
+  FManager.Actions[AActionName].Enabled := False;
+  FManager.Actions[AActionName].Visible := False;
+end;
 {$endregion}
 
 {$region 'protected methods' /fold}
@@ -702,21 +709,40 @@ begin
   AddButton('actFindNext');
   AddButton('actFindPrevious');
   AddButton('');
-  AddButton('actSettings');
-  AddButton('');
-  AddButton('actAlignSelection');
-  AddButton('actSortSelection');
-  AddButton('');
   AddButton('actToggleFoldLevel', FManager.Menus.FoldPopupMenu);
   AddButton('actToggleHighlighter', FManager.Menus.HighlighterPopupMenu);
   AddButton('');
-  AddButton('actFormat');
-  AddButton('actShapeCode');
-  AddButton('');
-  AddButton('actAutoGuessHighlighter');
-  AddButton('actSmartSelect');
   AddButton('actAbout');
 end;
+
+procedure TfrmMain.InitActions;
+begin
+  HideAction('actAlignSelection');
+  HideAction('actSortSelection');
+  HideAction('actInsertCharacterFromMap');
+  HideAction('actInsertColorValue');
+  HideAction('actSearch');
+  HideAction('actFindAllOccurences');
+  HideAction('actSearchReplace');
+  HideAction('actFindNext');
+  HideAction('actFindPrevious');
+  HideAction('actShowViews');
+  HideAction('actShowActions');
+  HideAction('actShowPreview');
+  HideAction('actShowMiniMap');
+  HideAction('actShowHTMLViewer');
+  HideAction('actShowStructureViewer');
+  HideAction('actShowHexEditor');
+  HideAction('actShowScriptEditor');
+  HideAction('actShapeCode');
+  HideAction('actFilterCode');
+  HideAction('actSmartSelect');
+  HideAction('actFormat');
+  HideAction('actAutoGuessHighlighter');
+  HideAction('actCreateDesktopLink');
+  HideAction('actMonitorChanges');
+end;
+
 {$endregion}
 
 end.

@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
-  Left = -894
+  Left = -1311
   Height = 598
-  Top = 211
+  Top = 218
   Width = 999
   Caption = 'SnippetSource'
   ClientHeight = 598
