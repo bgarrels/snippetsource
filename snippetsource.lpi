@@ -321,11 +321,10 @@ end;"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SnippetSource_Forms_Main"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="21"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="263"/>
-        <CursorPos X="19" Y="282"/>
+        <TopLine Value="44"/>
+        <CursorPos X="26" Y="61"/>
         <UsageCount Value="243"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -338,12 +337,14 @@ end;"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SnippetSource_Forms_VirtualDBTree"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="15"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="66"/>
-        <CursorPos X="85" Y="492"/>
+        <TopLine Value="149"/>
+        <CursorPos X="53" Y="162"/>
         <UsageCount Value="243"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit2>
       <Unit3>
@@ -1829,7 +1830,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="3029"/>
         <CursorPos X="53" Y="3032"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="13"/>
         <Loaded Value="True"/>
       </Unit213>
       <Unit214>
@@ -1839,7 +1840,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="37"/>
         <CursorPos X="3" Y="34"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="13"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit214>
@@ -1858,7 +1859,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="31" Y="8"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit216>
@@ -1868,7 +1869,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="785"/>
         <CursorPos X="32" Y="807"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit217>
@@ -1879,7 +1880,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="791"/>
         <CursorPos X="1" Y="813"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit218>
@@ -1890,7 +1891,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="2258"/>
         <CursorPos X="56" Y="2268"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit219>
@@ -1900,7 +1901,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="98"/>
         <CursorPos X="1" Y="113"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit220>
       <Unit221>
@@ -1910,7 +1911,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1390"/>
         <CursorPos X="1" Y="1404"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit221>
@@ -1920,7 +1921,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="14"/>
         <CursorPos X="1" Y="40"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit222>
       <Unit223>
@@ -1970,7 +1971,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit227>
       <Unit228>
@@ -1979,7 +1980,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1078"/>
         <CursorPos X="1" Y="1093"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit228>
       <Unit229>
@@ -1989,7 +1990,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="45" Y="32"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit229>
       <Unit230>
@@ -1999,7 +2000,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="33" Y="10"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit230>
       <Unit231>
@@ -2009,7 +2010,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="62"/>
         <CursorPos X="10" Y="77"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit231>
       <Unit232>
@@ -2019,7 +2020,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="152"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit232>
       <Unit233>
@@ -2028,7 +2029,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="738"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit233>
       <Unit234>
@@ -2038,7 +2039,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="179"/>
         <CursorPos X="11" Y="198"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit234>
       <Unit235>
@@ -2048,7 +2049,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="590"/>
         <CursorPos X="40" Y="957"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit235>
       <Unit236>
@@ -2057,7 +2058,7 @@ end;"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit236>
       <Unit237>
@@ -2082,124 +2083,124 @@ end;"/>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="..\..\components\richmemo\richmemortf.pas"/>
-        <Caret Line="1" Column="1" TopLine="152"/>
+        <Filename Value="..\..\..\lazarus\lcl\include\application.inc"/>
+        <Caret Line="1093" Column="1" TopLine="1078"/>
       </Position1>
       <Position2>
         <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="424" Column="1" TopLine="504"/>
+        <Caret Line="280" Column="1" TopLine="261"/>
       </Position2>
       <Position3>
         <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="659" Column="1" TopLine="648"/>
+        <Caret Line="281" Column="1" TopLine="261"/>
       </Position3>
       <Position4>
         <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="104" Column="12" TopLine="100"/>
+        <Caret Line="282" Column="1" TopLine="261"/>
       </Position4>
       <Position5>
         <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="40" Column="3" TopLine="25"/>
+        <Caret Line="283" Column="1" TopLine="261"/>
       </Position5>
       <Position6>
         <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="189" Column="38" TopLine="169"/>
+        <Caret Line="284" Column="1" TopLine="261"/>
       </Position6>
       <Position7>
-        <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="280" Column="4" TopLine="261"/>
+        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
+        <Caret Line="196" Column="1" TopLine="181"/>
       </Position7>
       <Position8>
-        <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="281" Column="3" TopLine="261"/>
+        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
+        <Caret Line="198" Column="1" TopLine="181"/>
       </Position8>
       <Position9>
-        <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="280" Column="1" TopLine="261"/>
+        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
+        <Caret Line="199" Column="1" TopLine="181"/>
       </Position9>
       <Position10>
-        <Filename Value="..\..\..\lazarus\lcl\include\application.inc"/>
-        <Caret Line="1093" Column="1" TopLine="1078"/>
+        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
+        <Caret Line="200" Column="1" TopLine="181"/>
       </Position10>
       <Position11>
-        <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="280" Column="1" TopLine="261"/>
+        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
+        <Caret Line="201" Column="1" TopLine="181"/>
       </Position11>
       <Position12>
-        <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="281" Column="1" TopLine="261"/>
+        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
+        <Caret Line="202" Column="1" TopLine="181"/>
       </Position12>
       <Position13>
-        <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="282" Column="1" TopLine="261"/>
+        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
+        <Caret Line="203" Column="1" TopLine="181"/>
       </Position13>
       <Position14>
-        <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="283" Column="1" TopLine="261"/>
+        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
+        <Caret Line="204" Column="1" TopLine="181"/>
       </Position14>
       <Position15>
-        <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="284" Column="1" TopLine="261"/>
+        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
+        <Caret Line="205" Column="1" TopLine="181"/>
       </Position15>
       <Position16>
         <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="196" Column="1" TopLine="181"/>
+        <Caret Line="207" Column="1" TopLine="182"/>
       </Position16>
       <Position17>
         <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="198" Column="1" TopLine="181"/>
+        <Caret Line="211" Column="1" TopLine="186"/>
       </Position17>
       <Position18>
         <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="199" Column="1" TopLine="181"/>
+        <Caret Line="213" Column="1" TopLine="188"/>
       </Position18>
       <Position19>
-        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="200" Column="1" TopLine="181"/>
+        <Filename Value="snippetsource_forms_main.pas"/>
+        <Caret Line="280" Column="26" TopLine="261"/>
       </Position19>
       <Position20>
-        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="201" Column="1" TopLine="181"/>
+        <Filename Value="snippetsource_forms_main.pas"/>
+        <Caret Line="224" Column="16" TopLine="213"/>
       </Position20>
       <Position21>
-        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="202" Column="1" TopLine="181"/>
+        <Filename Value="snippetsource_forms_main.pas"/>
+        <Caret Line="707" Column="33" TopLine="692"/>
       </Position21>
       <Position22>
-        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="203" Column="1" TopLine="181"/>
+        <Filename Value="snippetsource_forms_main.pas"/>
+        <Caret Line="236" Column="62" TopLine="228"/>
       </Position22>
       <Position23>
-        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="204" Column="1" TopLine="181"/>
+        <Filename Value="snippetsource_forms_main.pas"/>
+        <Caret Line="237" Column="62" TopLine="230"/>
       </Position23>
       <Position24>
-        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="205" Column="1" TopLine="181"/>
+        <Filename Value="snippetsource_forms_main.pas"/>
+        <Caret Line="236" Column="62" TopLine="228"/>
       </Position24>
       <Position25>
-        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="207" Column="1" TopLine="182"/>
+        <Filename Value="snippetsource_forms_main.pas"/>
+        <Caret Line="237" Column="62" TopLine="230"/>
       </Position25>
       <Position26>
-        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="211" Column="1" TopLine="186"/>
+        <Filename Value="snippetsource_forms_main.pas"/>
+        <Caret Line="236" Column="62" TopLine="228"/>
       </Position26>
       <Position27>
-        <Filename Value="..\..\..\lazarus\lcl\include\customform.inc"/>
-        <Caret Line="213" Column="1" TopLine="188"/>
+        <Filename Value="snippetsource_forms_main.pas"/>
+        <Caret Line="237" Column="62" TopLine="230"/>
       </Position27>
       <Position28>
         <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="280" Column="26" TopLine="261"/>
+        <Caret Line="236" Column="62" TopLine="228"/>
       </Position28>
       <Position29>
         <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="224" Column="16" TopLine="213"/>
+        <Caret Line="237" Column="62" TopLine="230"/>
       </Position29>
       <Position30>
         <Filename Value="snippetsource_forms_main.pas"/>
-        <Caret Line="707" Column="33" TopLine="692"/>
+        <Caret Line="236" Column="62" TopLine="228"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

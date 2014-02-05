@@ -53,7 +53,9 @@ object frmMain: TfrmMain
         Top = 27
         Width = 713
         AutoSize = True
-        EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+        EdgeBorders = []
+        EdgeInner = esNone
+        EdgeOuter = esNone
         TabOrder = 0
         object tlbApplication: TToolBar
           Left = 649
@@ -87,7 +89,9 @@ object frmMain: TfrmMain
           Top = 0
           Width = 713
           AutoSize = True
-          EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+          EdgeBorders = []
+          EdgeInner = esNone
+          EdgeOuter = esNone
           TabOrder = 0
         end
       end
@@ -151,6 +155,22 @@ object frmMain: TfrmMain
           Top = 5
           Width = 16
           Align = alCustom
+        end
+        object btnHighlighter: TMenuButton
+          Left = 649
+          Height = 22
+          Top = 3
+          Width = 62
+          Anchors = [akTop, akRight]
+          Flat = True
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Courier New'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
         end
       end
     end

@@ -12,7 +12,7 @@ object frmVirtualDBTree: TfrmVirtualDBTree
   ParentFont = True
   PopupMenu = ppmTreeView
   ShowHint = True
-  LCLVersion = '1.3'
+  LCLVersion = '1.2.0.2'
   object pnlMain: TPanel
     Left = 3
     Height = 419
@@ -42,7 +42,9 @@ object frmVirtualDBTree: TfrmVirtualDBTree
         Top = 0
         Width = 312
         ButtonHeight = 20
-        EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+        EdgeBorders = []
+        EdgeInner = esNone
+        EdgeOuter = esNone
         Images = imlMain
         TabOrder = 0
         object btnNewRoot: TToolButton
@@ -104,7 +106,9 @@ object frmVirtualDBTree: TfrmVirtualDBTree
         Width = 312
         Align = alClient
         AutoSize = True
-        EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+        EdgeBorders = []
+        EdgeInner = esNone
+        EdgeOuter = esNone
         Images = imlMain
         TabOrder = 0
         object btnExpandNodes: TToolButton
