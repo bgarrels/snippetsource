@@ -25,7 +25,7 @@ interface
 uses
   Classes, DB, Graphics, ImgList, Controls,
 
- StrHolder,
+  StrHolder,
   // zeos
   ZConnection, ZDataset, ZSqlUpdate, ZSequence, ZSqlMetadata,
 

@@ -806,6 +806,7 @@ object dmMain: TdmMain
   end
   object conMain: TZConnection
     ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
     Properties.Strings = (
       'AutoEncodeStrings=ON'
       'codepage='

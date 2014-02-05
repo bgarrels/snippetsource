@@ -43,7 +43,7 @@ uses
 
   VirtualTrees,
 
-   ts.Components.VirtualDBTreeEx;
+  ts.Components.VirtualDBTreeEx;
 
 { Form holding data-aware treeview for flat database files.
   To support this treeview, the table must include following fields for storing
