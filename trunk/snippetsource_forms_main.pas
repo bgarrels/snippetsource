@@ -1,5 +1,5 @@
 {
-  Copyright (C) 2013 Tim Sinaeve tim.sinaeve@gmail.com
+  Copyright (C) 2013-2014 Tim Sinaeve tim.sinaeve@gmail.com
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -33,7 +33,7 @@ uses
   ts.Core.VersionInfo,
 
   ts.Editor.Interfaces, ts.Editor.Highlighters, ts_Editor_View,
-  ts.Editor.Helpers,
+  ts.Editor.Factories,
 
   ts.RichEditor.Helpers, ts.RichEditor.Interfaces,
 
@@ -62,7 +62,7 @@ type
     actToggleMaximize  : TAction;
     actToggleStayOnTop : TAction;
     actLookup          : TAction;
-    btnHighlighter     : TMenuButton;
+//    btnHighlighter     : TMenuButton;
     btnHighlighterSB   : TSpeedButton;
     btnLineBreakStyle  : TSpeedButton;
     edtSearch          : TEdit;
@@ -141,6 +141,7 @@ type
     FCommonPath     : string;
     FData           : IInterface;
     FManager        : IEditorManager;
+    FSettings       : IEditorSettings;
 
     function GetConnection: IConnection;
     function GetDataSet: IDataSet;
@@ -207,7 +208,7 @@ uses
   ts.Richeditor.Manager,
 
   SnippetSource_Forms_SQLLog, SnippetSource_Forms_SettingsDialog,
-  SnippetSource.Modules.Data,
+  SnippetSource_Modules_Data,
 
   ts.Core.SharedLogger;
 
@@ -221,16 +222,18 @@ begin
   inherited AfterConstruction;
 
   FData := TdmMain.Create(Self);
-  FManager := CreateEditorManager(Self, True, 'settings.xml');
+  FSettings := TEditorFactories.CreateSettings(Self);
+  FSettings.FileName := 'settings.xml';
+  FManager := TEditorFactories.CreateManager(Self, FSettings);
 
   FFileSearcher := TFileSearcher.Create;
   FFileSearcher.OnDirectoryFound  := FileSearcherDirectoryFound;
   FFileSearcher.OnFileFound  := FileSearcherFileFound;
 
-  V := CreateEditorView(pnlEditor, FManager, 'Editor');
+  V := TEditorFactories.CreateView(pnlEditor, FManager, 'Editor');
   V.IsFile := False;
   V.Editor.PopupMenu  := FManager.Menus.EditorPopupMenu;
-  btnHighlighter.Menu := FManager.Menus.HighlighterPopupMenu;
+//  btnHighlighter.Menu := FManager.Menus.HighlighterPopupMenu;
   FManager.Settings.AutoFormatXML := False;
   FManager.Settings.AutoGuessHighlighterType := False;
 
@@ -276,6 +279,7 @@ procedure TfrmMain.BeforeDestruction;
 begin
   FData := nil;
   FManager := nil;
+  FSettings := nil;
   FreeAndNil(FFileSearcher);
   inherited BeforeDestruction;
 end;
@@ -342,7 +346,7 @@ end;
 
 procedure TfrmMain.btnHighlighterClick(Sender: TObject);
 begin
-  btnHighlighter.PopupMenu.PopUp;
+//  btnHighlighter.PopupMenu.PopUp;
 end;
 {$endregion}
 
@@ -354,12 +358,12 @@ end;
 
 procedure TfrmMain.btnHighlighterMouseEnter(Sender: TObject);
 begin
-  btnHighlighter.Transparent := False;
+//  btnHighlighter.Transparent := False;
 end;
 
 procedure TfrmMain.btnHighlighterMouseLeave(Sender: TObject);
 begin
-  btnHighlighter.Transparent := True;
+//  btnHighlighter.Transparent := True;
 end;
 
 procedure TfrmMain.btnLineBreakStyleClick(Sender: TObject);
@@ -408,10 +412,10 @@ begin
         Editor.Text := Snippet.Text;
         if Snippet.Highlighter <> '' then
         begin
-          Editor.AssignHighlighter(Snippet.Highlighter);
+          Editor.HighlighterName := Snippet.Highlighter;
         end;
         edtTitle.Text := Snippet.NodeName;
-        btnHighlighter.Caption := Snippet.Highlighter;
+//        btnHighlighter.Caption := Snippet.Highlighter;
 
         //imlNodes.GetBitmap(DS.FieldByName('NodeTypeID').AsInteger,imgNode.Picture.Bitmap);
 
@@ -422,7 +426,8 @@ begin
           try
             SS.Position := 0;
             try
-              RichEditor.LoadFromStream(SS);
+              if SS.Size > 0 then
+                RichEditor.LoadFromStream(SS);
             except
               RichEditor.Clear;
               RichEditor.Editor.Text := 'Error loading RTF stream';
@@ -602,8 +607,8 @@ end;
 
 procedure TfrmMain.HideAction(const AActionName: string);
 begin
-  FManager.Actions[AActionName].Enabled := False;
-  FManager.Actions[AActionName].Visible := False;
+  //FManager.Actions[AActionName].Enabled := False;
+  //FManager.Actions[AActionName].Visible := False;
 end;
 {$endregion}
 
@@ -615,7 +620,7 @@ begin
   if Assigned(Editor.HighlighterItem) then
   begin
     Snippet.Highlighter := Editor.HighlighterItem.Name;
-    btnHighlighter.Caption := Editor.HighlighterItem.Name;
+//    btnHighlighter.Caption := Editor.HighlighterItem.Name;
   end;
 end;
 

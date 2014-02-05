@@ -1,5 +1,5 @@
 {
-  Copyright (C) 2013 Tim Sinaeve tim.sinaeve@gmail.com
+  Copyright (C) 2013-2014 Tim Sinaeve tim.sinaeve@gmail.com
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -53,7 +53,7 @@ type
 implementation
 
 uses
-  ts.Editor.Helpers;
+  ts.Editor.Factories;
 
 {$R *.lfm}
 
@@ -72,9 +72,9 @@ var
   V: IEditorView;
 begin
   inherited AfterConstruction;
-  FManager := CreateEditorManager(Self);
-  V := CreateEditorView(Self, FManager, 'Editor2');
-  V.AssignHighlighter('SQL');
+  FManager := TEditorFactories.CreateManager(Self, nil);
+  V := TEditorFactories.CreateView(Self, FManager, 'Editor2');
+  V.HighlighterName := 'SQL';
   DriverManager.AddLoggingListener(Self);
   V.Editor.PopupMenu := FManager.Menus.EditorPopupMenu;
  // btnHighlighter.Menu := EditorActions.HighlighterPopupMenu;

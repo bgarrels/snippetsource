@@ -15,7 +15,7 @@ object frmMain: TfrmMain
   Position = poScreenCenter
   SessionProperties = 'Left;Top;Width;Height;Position;WindowState;FormStyle'
   ShowHint = True
-  LCLVersion = '1.3'
+  LCLVersion = '1.2.0.2'
   object pnlLeft: TPanel
     Left = 0
     Height = 578
@@ -151,29 +151,6 @@ object frmMain: TfrmMain
           Top = 5
           Width = 16
           Align = alCustom
-        end
-        object btnHighlighter: TMenuButton
-          Left = 649
-          Height = 17
-          Top = 4
-          Width = 43
-          Style = dbsCombo
-          Align = alCustom
-          Anchors = [akTop, akRight]
-          Caption = 'Cap'
-          Flat = True
-          Font.CharSet = ANSI_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Courier New'
-          Font.Pitch = fpFixed
-          Font.Quality = fqDraft
-          Font.Style = [fsBold]
-          Layout = blGlyphRight
-          OnClick = btnHighlighterClick
-          OnMouseEnter = btnHighlighterMouseEnter
-          OnMouseLeave = btnHighlighterMouseLeave
-          ParentFont = False
         end
       end
     end
