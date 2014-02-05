@@ -62,7 +62,6 @@ type
     actToggleMaximize  : TAction;
     actToggleStayOnTop : TAction;
     actLookup          : TAction;
-//    btnHighlighter     : TMenuButton;
     btnHighlighterSB   : TSpeedButton;
     btnLineBreakStyle  : TSpeedButton;
     edtSearch          : TEdit;
@@ -71,6 +70,7 @@ type
     imgNode            : TImage;
     imlMain            : TImageList;
     imlNodes           : TImageList;
+    btnHighlighter     : TMenuButton;
     pnlComments        : TPanel;
     pnlEditMode        : TPanel;
     pnlEditor          : TPanel;
@@ -233,7 +233,7 @@ begin
   V := TEditorFactories.CreateView(pnlEditor, FManager, 'Editor');
   V.IsFile := False;
   V.Editor.PopupMenu  := FManager.Menus.EditorPopupMenu;
-//  btnHighlighter.Menu := FManager.Menus.HighlighterPopupMenu;
+  btnHighlighter.Menu := FManager.Menus.HighlighterPopupMenu;
   FManager.Settings.AutoFormatXML := False;
   FManager.Settings.AutoGuessHighlighterType := False;
 
@@ -346,7 +346,7 @@ end;
 
 procedure TfrmMain.btnHighlighterClick(Sender: TObject);
 begin
-//  btnHighlighter.PopupMenu.PopUp;
+  btnHighlighter.PopupMenu.PopUp;
 end;
 {$endregion}
 
@@ -358,12 +358,12 @@ end;
 
 procedure TfrmMain.btnHighlighterMouseEnter(Sender: TObject);
 begin
-//  btnHighlighter.Transparent := False;
+  btnHighlighter.Transparent := False;
 end;
 
 procedure TfrmMain.btnHighlighterMouseLeave(Sender: TObject);
 begin
-//  btnHighlighter.Transparent := True;
+  btnHighlighter.Transparent := True;
 end;
 
 procedure TfrmMain.btnLineBreakStyleClick(Sender: TObject);
@@ -415,7 +415,7 @@ begin
           Editor.HighlighterName := Snippet.Highlighter;
         end;
         edtTitle.Text := Snippet.NodeName;
-//        btnHighlighter.Caption := Snippet.Highlighter;
+        btnHighlighter.Caption := Snippet.Highlighter;
 
         //imlNodes.GetBitmap(DS.FieldByName('NodeTypeID').AsInteger,imgNode.Picture.Bitmap);
 
@@ -620,7 +620,7 @@ begin
   if Assigned(Editor.HighlighterItem) then
   begin
     Snippet.Highlighter := Editor.HighlighterItem.Name;
-//    btnHighlighter.Caption := Editor.HighlighterItem.Name;
+    btnHighlighter.Caption := Editor.HighlighterItem.Name;
   end;
 end;
 
