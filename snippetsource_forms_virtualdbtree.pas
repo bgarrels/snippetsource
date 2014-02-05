@@ -119,15 +119,18 @@ type
 
     procedure dscMainDataChange(Sender: TObject; Field: TField);
     procedure FormShow(Sender: TObject);
-    procedure FTreeViewCreateEditor(Sender: TBaseVirtualTree; Node: PVirtualNode; Column: TColumnIndex; out EditLink: IVTEditLink);
-    procedure FTreeViewDragAllowed(Sender: TBaseVirtualTree; Node: PVirtualNode; Column: TColumnIndex; var Allowed: Boolean);
+    procedure FTreeViewCreateEditor(Sender: TBaseVirtualTree; Node:
+      PVirtualNode; Column: TColumnIndex; out EditLink: IVTEditLink);
+    procedure FTreeViewDragAllowed(Sender: TBaseVirtualTree; Node: PVirtualNode;
+      Column: TColumnIndex; var Allowed: Boolean);
     procedure FTreeViewDragDrop(Sender: TBaseVirtualTree; Source: TObject;
       DataObject: IDataObject; Formats: TFormatArray; Shift: TShiftState;
       const Pt: TPoint; var Effect: DWORD; Mode: TDropMode);
     procedure FTreeViewDragOver(Sender: TBaseVirtualTree; Source: TObject;
       Shift: TShiftState; State: TDragState; const Pt: TPoint; Mode: TDropMode;
       var Effect: DWORD; var Accept: Boolean);
-    procedure FTreeViewEdited(Sender: TBaseVirtualTree; Node: PVirtualNode; Column: TColumnIndex);
+    procedure FTreeViewEdited(Sender: TBaseVirtualTree; Node: PVirtualNode;
+      Column: TColumnIndex);
 
   private
     FTreeView          : TCheckVirtualDBTreeEx;
@@ -168,19 +171,27 @@ type
     function GetToolbarBottomVisible: Boolean;
     function GetToolbarTopVisible: Boolean;
 
-    procedure GetFileListFromObj(const DataObj: IDataObject;
-      AFileList: TStrings);
+    procedure GetFileListFromObj(
+      const DataObj   : IDataObject;
+            AFileList : TStrings
+    );
 
   protected
-    procedure PostTreeData(AParentID, ANodeType: Integer; const AName: string);
-      virtual;
+    procedure PostTreeData(
+            AParentID : Integer;
+            ANodeType : Integer;
+      const AName     : string
+    ); virtual;
 
     procedure InitializeTreeView;
 
     // event dispatch methods
     procedure DoNewFolderNode; dynamic;
     procedure DoNewItemNode; dynamic;
-    procedure DoDropFiles(AFiles: TStrings; const AAttachMode : TVTNodeAttachMode); dynamic;
+    procedure DoDropFiles(
+            AFiles      : TStrings;
+      const AAttachMode : TVTNodeAttachMode
+    ); dynamic;
 
   public
     procedure AfterConstruction; override;
@@ -269,7 +280,7 @@ implementation
 uses
   SysUtils, ShellApi,
 
-  VTEditors;
+  SnippetSource.VirtualTree.Editors;
 
 resourcestring
   SDeleteSelectedItems = 'Are you sure you want to delete te selected item(s)?';
