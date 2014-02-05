@@ -7,11 +7,9 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  SysUtils,
-  Forms,
-  richmemopackage,
-  lazrichedit,
-  FrameViewer09,
+  SysUtils, Forms, richmemopackage, lazrichedit, virtualtreeview_package,
+  virtualdbtreeex_laz, virtualdbgrid_package, luicontrols, khexeditorlaz,
+  zcomponent,
 
   { you can add units after this }
 
@@ -35,7 +33,7 @@ uses
   ts.Editor.AlignLines.Settings, ts.Editor.Search.Engine.Settings,
   ts.Editor.CodeShaper.Settings, ts.Editor.CodeFilter.Settings,
   ts.Editor.HTMLView.Settings, ts.Editor.MiniMap.Settings,
-  ts.Editor.HexEditor.Settings, ts.Editor.Types,
+  ts.Editor.HexEditor.Settings, ts.Editor.Types, ts_Editor_SortStrings_ToolView,
 
   snippetsource_forms_main;
 
