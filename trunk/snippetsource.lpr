@@ -35,7 +35,7 @@ uses
   ts.Editor.HTMLView.Settings, ts.Editor.MiniMap.Settings,
   ts.Editor.HexEditor.Settings, ts.Editor.Types, ts_Editor_SortStrings_ToolView,
 
-  snippetsource_forms_main;
+  snippetsource_forms_main, snippetsource.virtualtree.editors;
 
 {$R *.res}
 
