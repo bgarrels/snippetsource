@@ -205,7 +205,7 @@ uses
 
   ts_Editor_Manager, ts_Editor_AboutDialog,
 
-  ts.Richeditor.Manager,
+  ts_Richeditor_Manager,
 
   SnippetSource_Forms_SQLLog, SnippetSource_Forms_SettingsDialog,
   SnippetSource_Modules_Data,
@@ -472,9 +472,9 @@ end;
 procedure TfrmMain.OnTreeDropFiles(Sender: TBaseVirtualTree;
   AFiles: TStrings; AAttachMode: TVTNodeAttachMode);
 var
-  I       : Integer;
-  T       : Integer;
-  sFile   : string;
+  I     : Integer;
+  T     : Integer;
+  sFile : string;
 begin
   DataSet.DisableControls;
   FCommonPath := GetCommonPath(AFiles);

@@ -58,9 +58,9 @@ object frmMain: TfrmMain
         EdgeOuter = esNone
         TabOrder = 0
         object tlbApplication: TToolBar
-          Left = 649
-          Height = 22
-          Top = 2
+          Left = 651
+          Height = 26
+          Top = 0
           Width = 62
           Align = alRight
           AutoSize = True
