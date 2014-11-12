@@ -92,6 +92,7 @@ type
     tlbEditorView      : TToolBar;
     tlbRichEditorView  : TToolBar;
     tlbApplication     : TToolBar;
+    ToolButton1: TToolButton;
     {$endregion}
 
     procedure actAboutExecute(Sender: TObject);
@@ -201,16 +202,14 @@ uses
 
   SynEditTypes,
 
-  ts.Core.Utils,
+  ts.Core.Utils, ts.Core.SharedLogger,
 
   ts_Editor_Manager, ts_Editor_AboutDialog,
 
   ts_Richeditor_Manager,
 
   SnippetSource_Forms_SQLLog, SnippetSource_Forms_SettingsDialog,
-  SnippetSource_Modules_Data,
-
-  ts.Core.SharedLogger;
+  SnippetSource_Modules_Data;
 
 {$region 'construction and destruction' /fold}
 procedure TfrmMain.AfterConstruction;
@@ -227,8 +226,8 @@ begin
   FManager := TEditorFactories.CreateManager(Self, FSettings);
 
   FFileSearcher := TFileSearcher.Create;
-  FFileSearcher.OnDirectoryFound  := FileSearcherDirectoryFound;
-  FFileSearcher.OnFileFound  := FileSearcherFileFound;
+  FFileSearcher.OnDirectoryFound := FileSearcherDirectoryFound;
+  FFileSearcher.OnFileFound      := FileSearcherFileFound;
 
   V := TEditorFactories.CreateView(pnlEditor, FManager, 'Editor');
   V.IsFile := False;
@@ -417,7 +416,7 @@ begin
         edtTitle.Text := Snippet.NodeName;
         btnHighlighter.Caption := Snippet.Highlighter;
 
-        //imlNodes.GetBitmap(DS.FieldByName('NodeTypeID').AsInteger,imgNode.Picture.Bitmap);
+       //imlNodes.GetBitmap(DS.FieldByName('NodeTypeID').AsInteger,imgNode.Picture.Bitmap);
 
         if Snippet.CommentRTF <> '' then
         begin
