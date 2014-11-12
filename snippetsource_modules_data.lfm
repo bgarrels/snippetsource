@@ -812,7 +812,6 @@ object dmMain: TdmMain
       'codepage='
       'controls_cp=CP_UTF8'
     )
-    UseMetadata = False
     AfterConnect = conMainAfterConnect
     SQLHourGlass = True
     Port = 0
