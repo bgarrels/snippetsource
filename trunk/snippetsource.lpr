@@ -7,9 +7,9 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  SysUtils, Forms, richmemopackage, lazrichedit, virtualtreeview_package,
-  virtualdbtreeex_laz, virtualdbgrid_package, luicontrols, khexeditorlaz,
-  zcomponent,
+  SysUtils, Forms, pascalscript, richmemopackage, lazrichedit,
+  virtualtreeview_package, virtualdbtreeex_laz, virtualdbgrid_package,
+  luicontrols, khexeditorlaz, zcomponent, oxml_lazarus,
 
   { you can add units after this }
 
@@ -35,7 +35,8 @@ uses
   ts.Editor.HTMLView.Settings, ts.Editor.MiniMap.Settings,
   ts.Editor.HexEditor.Settings, ts.Editor.Types, ts_Editor_SortStrings_ToolView,
 
-  snippetsource_forms_main, snippetsource.virtualtree.editors;
+  snippetsource_forms_main, snippetsource.virtualtree.editors, OBufferedStreams,
+  ODictionary, OEncoding, OHashedStrings, OTextReadWrite, OWideSupp;
 
 {$R *.res}
 
