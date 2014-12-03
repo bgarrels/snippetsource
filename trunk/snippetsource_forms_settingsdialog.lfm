@@ -98,11 +98,11 @@ object frmSettingsDialog: TfrmSettingsDialog
     end
     object tsImages: TTabSheet
       Caption = 'Images'
-      ClientHeight = 389
+      ClientHeight = 387
       ClientWidth = 454
       object grdGlyph: TVirtualDBGrid
         Left = 109
-        Height = 384
+        Height = 382
         Top = 3
         Width = 342
         Anchors = [akTop, akLeft, akRight, akBottom]
@@ -143,7 +143,7 @@ object frmSettingsDialog: TfrmSettingsDialog
       end
       object vstImageList: TVirtualStringTree
         Left = 1
-        Height = 328
+        Height = 326
         Top = 58
         Width = 104
         Anchors = [akTop, akLeft, akBottom]
@@ -166,11 +166,11 @@ object frmSettingsDialog: TfrmSettingsDialog
     end
     object Highlighters: TTabSheet
       Caption = 'Highlighters'
-      ClientHeight = 389
+      ClientHeight = 387
       ClientWidth = 454
       object grdHighlighters: TVirtualDBGrid
         Left = 117
-        Height = 384
+        Height = 382
         Top = 3
         Width = 335
         Anchors = [akTop, akLeft, akRight, akBottom]

@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
-  Left = -1311
+  Left = 469
   Height = 598
-  Top = 218
+  Top = 191
   Width = 999
   Caption = 'SnippetSource'
   ClientHeight = 598
@@ -53,6 +53,7 @@ object frmMain: TfrmMain
         Top = 27
         Width = 713
         AutoSize = True
+        ButtonWidth = 20
         EdgeBorders = []
         EdgeInner = esNone
         EdgeOuter = esNone
