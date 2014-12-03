@@ -30,8 +30,6 @@ uses
 
   RTTICtrls, ButtonPanel, EditBtn,
 
-  StrHolder,
-
   VirtualTrees,
 
   VirtualDBGrid,
@@ -72,6 +70,7 @@ type
     procedure actOpenDatabaseExecute(Sender: TObject);
     procedure actOpenGlyphsExecute(Sender: TObject);
     procedure actRefreshGlyphsExecute(Sender: TObject);
+
     procedure cbxImageListDrawItem(Control: TWinControl; Index: Integer; ARect: TRect; State: TOwnerDrawState);
     procedure chkAutomaticIndexClick(Sender: TObject);
     procedure dscGlyphStateChange(Sender: TObject);
@@ -90,10 +89,8 @@ type
     function GetSQLiteSettings: ISQLiteSettings;
 
     procedure LoadImage(const AFileName, AFieldName: string);
-  protected
-    procedure UpdateActions; override;
-
   public
+    procedure UpdateActions; override;
     constructor Create(TheOwner: TComponent; AData: IInterface); reintroduce;
       virtual;
 
@@ -113,8 +110,6 @@ type
 
 procedure ExecuteSettingsDialog(const AData: IInterface);
 
-//*****************************************************************************
-
 implementation
 
 {$R *.lfm}
@@ -129,10 +124,7 @@ begin
   FSettings.ShowModal;
 end;
 
-//*****************************************************************************
-// construction and destruction                                          BEGIN
-//*****************************************************************************
-
+{$region 'construction and destruction' /fold}
 constructor TfrmSettingsDialog.Create(TheOwner: TComponent; AData: IInterface);
 begin
   inherited Create(TheOwner);
@@ -165,15 +157,9 @@ begin
   FData := nil;
   inherited BeforeDestruction;
 end;
+{$endregion}
 
-//*****************************************************************************
-// construction and destruction                                            END
-//*****************************************************************************
-
-//*****************************************************************************
-// property access methods                                               BEGIN
-//*****************************************************************************
-
+{$region 'property access mehods' /fold}
 function TfrmSettingsDialog.GetConnection: IConnection;
 begin
   Result := FData as IConnection;
@@ -188,26 +174,9 @@ function TfrmSettingsDialog.GetSQLiteSettings: ISQLiteSettings;
 begin
   Result := FData as ISQLiteSettings;
 end;
+{$endregion}
 
-procedure TfrmSettingsDialog.UpdateActions;
-var
-  S: string;
-begin
-  inherited UpdateActions;
-  S := edtDatabaseFile.FileName;
-  actOpenDatabase.Enabled := FileExistsUTF8(S) and (Connection.FileName <> S);
-  actCreateNewDatabase.Enabled := not FileExistsUTF8(S);
-  actDeleteDatabase.Enabled := FileExistsUTF8(S);
-end;
-
-//*****************************************************************************
-// property access methods                                                 END
-//*****************************************************************************
-
-//*****************************************************************************
-// action handlers                                                       BEGIN
-//*****************************************************************************
-
+{$region 'action handlers' /fold}
 procedure TfrmSettingsDialog.actOpenDatabaseExecute(Sender: TObject);
 begin
   Connection.FileName := edtDatabaseFile.FileName;
@@ -247,6 +216,20 @@ begin
   vstImageList.RootNodeCount :=  (FData as IGlyphs).ImageList.Count;
 end;
 
+procedure TfrmSettingsDialog.actCreateNewDatabaseExecute(Sender: TObject);
+begin
+  Connection.FileName := edtDatabaseFile.FileName;
+  Connection.CreateNewDatabase;
+end;
+
+procedure TfrmSettingsDialog.actDeleteDatabaseExecute(Sender: TObject);
+begin
+  if FileExists(edtDatabaseFile.FileName) then
+    DeleteFile(edtDatabaseFile.FileName);
+end;
+{$endregion}
+
+{$region 'event handlers' /fold}
 procedure TfrmSettingsDialog.cbxImageListDrawItem(Control: TWinControl; Index: Integer; ARect: TRect; State: TOwnerDrawState);
 var
   Pos: Integer;
@@ -343,23 +326,9 @@ begin
   else
     CellText := '';
 end;
+{$endregion}
 
-procedure TfrmSettingsDialog.actCreateNewDatabaseExecute(Sender: TObject);
-begin
-  Connection.FileName := edtDatabaseFile.FileName;
-  Connection.CreateNewDatabase;
-end;
-
-procedure TfrmSettingsDialog.actDeleteDatabaseExecute(Sender: TObject);
-begin
-  if FileExists(edtDatabaseFile.FileName) then
-    DeleteFile(edtDatabaseFile.FileName);
-end;
-
-//*****************************************************************************
-// action handlers                                                         END
-//*****************************************************************************
-
+{$region 'private methods' /fold}
 procedure TfrmSettingsDialog.LoadImage(const AFileName, AFieldName: string);
 var
   F  : TBlobField;
@@ -374,8 +343,8 @@ begin
       P := TPicture.Create;
       try
         P.LoadFromFile(AFileName);
-//        P.Bitmap.TransparentColor := clDefault;
-//        P.Bitmap.Transparent := True;
+      //        P.Bitmap.TransparentColor := clDefault;
+      //        P.Bitmap.Transparent := True;
         P.Graphic.SaveToStream(MS);
         MS.Position := 0;
         F.LoadFromStream(MS);
@@ -387,8 +356,20 @@ begin
     end;
   end;
 end;
+{$endregion}
 
-
+{$region 'public methods' /fold}
+procedure TfrmSettingsDialog.UpdateActions;
+var
+  S: string;
+begin
+  inherited UpdateActions;
+  S := edtDatabaseFile.FileName;
+  actOpenDatabase.Enabled := FileExistsUTF8(S) and (Connection.FileName <> S);
+  actCreateNewDatabase.Enabled := not FileExistsUTF8(S);
+  actDeleteDatabase.Enabled := FileExistsUTF8(S);
+end;
+{$endregion}
 
 end.
 

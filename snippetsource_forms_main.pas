@@ -100,7 +100,6 @@ type
     procedure actSettingsExecute(Sender: TObject);
     procedure actToggleMaximizeExecute(Sender: TObject);
     procedure actToggleStayOnTopExecute(Sender: TObject);
-    procedure btnHighlighterClick(Sender: TObject);
     procedure btnHighlighterSBClick(Sender: TObject);
     procedure btnHighlighterMouseEnter(Sender: TObject);
     procedure btnHighlighterMouseLeave(Sender: TObject);
@@ -119,8 +118,9 @@ type
     );
 
     procedure EChange(Sender: TObject);
+    procedure EHighlighterChange(Sender: TObject);
     procedure EModified(Sender: TObject);
-    procedure ESave(
+    procedure EBeforeSave(
           Sender       : TObject;
       var AStorageName : string
     );
@@ -223,6 +223,7 @@ begin
   FData := TdmMain.Create(Self);
   FSettings := TEditorFactories.CreateSettings(Self);
   FSettings.FileName := 'settings.xml';
+  FSettings.Load;
   FManager := TEditorFactories.CreateManager(Self, FSettings);
 
   FFileSearcher := TFileSearcher.Create;
@@ -243,9 +244,10 @@ begin
 
   EV := FManager.Events;
   EV.OnNew := ENew;
-  EV.OnSave := ESave;
+  EV.OnBeforeSave := EBeforeSave;
   EV.AddOnChangeHandler(EChange);
   EV.AddOnModifiedHandler(EModified);
+  EV.AddOnHighlighterChangeHandler(EHighlighterChange);
 
   BuildToolBar;
   InitActions;
@@ -276,6 +278,7 @@ end;
 
 procedure TfrmMain.BeforeDestruction;
 begin
+  FSettings.Save;
   FData := nil;
   FManager := nil;
   FSettings := nil;
@@ -342,11 +345,6 @@ begin
   else
     FormStyle := fsNormal;
 end;
-
-procedure TfrmMain.btnHighlighterClick(Sender: TObject);
-begin
-  btnHighlighter.PopupMenu.PopUp;
-end;
 {$endregion}
 
 {$region 'event handlers' /fold}
@@ -384,12 +382,20 @@ begin
   AssignEditorChanges;
 end;
 
+procedure TfrmMain.EHighlighterChange(Sender: TObject);
+begin
+  DataSet.Edit;
+  AssignEditorChanges;
+  //Snippet.Highlighter := Editor.HighlighterName;
+  //DataSet.Post;
+end;
+
 procedure TfrmMain.EModified(Sender: TObject);
 begin
   Logger.Send('EModified');
 end;
 
-procedure TfrmMain.ESave(Sender: TObject; var AStorageName: string);
+procedure TfrmMain.EBeforeSave(Sender: TObject; var AStorageName: string);
 begin
   DataSet.Post;
 end;
@@ -746,7 +752,6 @@ begin
   HideAction('actCreateDesktopLink');
   HideAction('actMonitorChanges');
 end;
-
 {$endregion}
 
 end.
